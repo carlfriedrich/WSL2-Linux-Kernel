@@ -233,9 +233,6 @@ enum hv_isolation_type {
 #define HV_X64_MSR_TSC_EMULATION_CONTROL	0x40000107
 #define HV_X64_MSR_TSC_EMULATION_STATUS		0x40000108
 
-/* TSC invariant control */
-#define HV_X64_MSR_TSC_INVARIANT_CONTROL	0x40000118
-
 /*
  * Declare the MSR used to setup pages used to communicate with the hypervisor.
  */
