@@ -366,19 +366,7 @@ static void __init ms_hyperv_init_platform(void)
 	machine_ops.shutdown = hv_machine_shutdown;
 	machine_ops.crash_shutdown = hv_machine_crash_shutdown;
 #endif
-	if (ms_hyperv.features & HV_ACCESS_TSC_INVARIANT) {
-		/*
-		 * Writing to synthetic MSR 0x40000118 updates/changes the
-		 * guest visible CPUIDs. Setting bit 0 of this MSR  enables
-		 * guests to report invariant TSC feature through CPUID
-		 * instruction, CPUID 0x800000007/EDX, bit 8. See code in
-		 * early_init_intel() where this bit is examined. The
-		 * setting of this MSR bit should happen before init_intel()
-		 * is called.
-		 */
-		wrmsrl(HV_X64_MSR_TSC_INVARIANT_CONTROL, 0x1);
-		setup_force_cpu_cap(X86_FEATURE_TSC_RELIABLE);
-	}
+	mark_tsc_unstable("running on Hyper-V");
 
 	/*
 	 * Generation 2 instances don't support reading the NMI status from
