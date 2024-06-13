@@ -72,8 +72,6 @@
 #define HV_ACCESS_FREQUENCY_MSRS		BIT(11)
 /* AccessReenlightenmentControls privilege */
 #define HV_ACCESS_REENLIGHTENMENT		BIT(13)
-/* AccessTscInvariantControls privilege */
-#define HV_ACCESS_TSC_INVARIANT			BIT(15)
 
 /*
  * Group B features.
