@@ -50,8 +50,6 @@
 		HV_ACCESS_FREQUENCY_MSRS
 #define HV_X64_ACCESS_REENLIGHTENMENT		\
 		HV_ACCESS_REENLIGHTENMENT
-#define HV_X64_ACCESS_TSC_INVARIANT		\
-		HV_ACCESS_TSC_INVARIANT
 
 /*
  * Aliases for Group B features that have X64 in the name.
@@ -233,9 +231,6 @@
 #define HV_X64_MSR_REENLIGHTENMENT_CONTROL	0x40000106
 #define HV_X64_MSR_TSC_EMULATION_CONTROL	0x40000107
 #define HV_X64_MSR_TSC_EMULATION_STATUS		0x40000108
-
-/* TSC invariant control */
-#define HV_X64_MSR_TSC_INVARIANT_CONTROL	0x40000118
 
 /*
  * Declare the MSR used to setup pages used to communicate with the hypervisor.
